@@ -1,0 +1,53 @@
+.section {
+  width: 100%;
+  background: #ecede6;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-block: clamp(72px, 10vw, 104px);
+}
+
+.label {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+}
+
+.headline {
+  margin: 0;
+  max-width: 1000px;
+  font-weight: 400;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+
+.bio {
+  max-width: 820px;
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+.links {
+  display: flex;
+  gap: 32px;
+  font-size: 14px;
+  color: var(--color-accent);
+}
+
+.links a {
+  transition: text-shadow 0.15s ease;
+}
+
+.links a:hover {
+  opacity: 1;
+  /* Faux semi-bold via a stroke so the row doesn't reflow/wiggle. */
+  text-shadow:
+    0.018em 0 0 currentColor,
+    -0.018em 0 0 currentColor;
+}

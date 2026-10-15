@@ -1,0 +1,258 @@
+.section {
+  width: 100%;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+  padding-block: 30px clamp(64px, 8vw, 104px);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.count {
+  color: var(--color-accent);
+}
+
+.blurb {
+  max-width: 335px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+/* Featured */
+.featured {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured:hover .productArrow {
+  transform: translate(0.22em, -0.22em);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured:hover .productArrow {
+    transform: none;
+  }
+}
+
+.featuredStage {
+  background: var(--color-dark);
+  border-radius: 4px;
+  padding: 34px clamp(24px, 5vw, 72px) clamp(36px, 5vw, 64px);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  overflow: hidden;
+}
+
+.featuredTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.product {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1;
+  color: var(--color-dark-text);
+}
+
+.productArrow {
+  font-family: var(--font-sans);
+  font-size: 0.6em;
+  vertical-align: middle;
+}
+
+.platform {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-muted);
+}
+
+.shots {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.webShot {
+  flex: 1 1 auto;
+  min-width: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  aspect-ratio: 800 / 490;
+}
+
+.webShot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.appShot {
+  flex: 0 0 auto;
+  width: clamp(110px, 14%, 164px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  aspect-ratio: 164 / 490;
+}
+
+.appShot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Captions shared */
+.caption {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-block: 26px 12px;
+}
+
+.caption:hover {
+  opacity: 1;
+}
+
+.caption:hover .captionTitle {
+  color: var(--color-accent);
+}
+
+.captionMeta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.metaLabel {
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--color-muted);
+}
+
+.open {
+  font-size: 22px;
+  line-height: 1;
+  color: var(--color-accent);
+}
+
+.captionTitle {
+  font-weight: 500;
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+.disciplines {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+/* Secondary grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.preview {
+  height: clamp(360px, 42vw, 550px);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  text-align: center;
+  padding: clamp(24px, 4vw, 38px);
+  overflow: hidden;
+}
+
+.previewNavy {
+  background: var(--color-navy);
+}
+
+.wordmark {
+  font-family: var(--font-serif);
+  font-size: clamp(52px, 8vw, 72px);
+  line-height: 1;
+  color: var(--color-navy-head);
+}
+
+.descriptor {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--color-navy-label);
+}
+
+.previewBody {
+  max-width: 564px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-navy-body);
+}
+
+.lock {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 12px;
+  color: var(--color-navy-body);
+}
+
+.lockIcon {
+  width: 14px;
+  height: 14px;
+  background: var(--color-navy-body);
+  -webkit-mask: url('/assets/lock.svg') center / contain no-repeat;
+  mask: url('/assets/lock.svg') center / contain no-repeat;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .appShot {
+    width: clamp(90px, 20%, 140px);
+  }
+}

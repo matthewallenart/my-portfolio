@@ -1,0 +1,54 @@
+/* Custom cursor.
+   The dot inverts the backdrop in grayscale, so it reads as a black dot on
+   light areas / a light dot on dark areas, and any text it passes over turns
+   neutral white — never tinted (grayscale removes the blue→yellow shift that a
+   plain colour inversion would produce). */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: transparent;
+  backdrop-filter: invert(1) grayscale(1);
+  -webkit-backdrop-filter: invert(1) grayscale(1);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  will-change: transform;
+  transition:
+    width 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease;
+}
+
+/* Over interactive things (links, buttons) — large dot. */
+.grow {
+  width: 72px;
+  height: 72px;
+}
+
+/* Over images — a plain white dot, no inversion. */
+.image {
+  width: 72px;
+  height: 72px;
+  background: #ffffff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Subtle press feedback. */
+.down {
+  transform-origin: center;
+}
+.cursor.down {
+  width: 12px;
+  height: 12px;
+}
+
+/* Applied to <body> while the custom cursor is active. */
+.hideNativeCursor,
+.hideNativeCursor * {
+  cursor: none !important;
+}
